@@ -13,5 +13,7 @@ export default defineConfig(({ mode }) => {
       },
     };
   }
-  return {};
+  return {
+    base: "/babylon-image-tracking-sandbox/",
+  };
 });
