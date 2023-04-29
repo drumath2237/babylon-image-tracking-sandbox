@@ -31,26 +31,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
+
       - name: Setup Node
         uses: actions/setup-node@v2.5.2
         with:
-          version: '16'
-          
-      - name: install & build
-        run: |
-          "npm i"
-          "npm run build"
-        
+          node-version: 16.x
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
-        
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: './dist'
-      
+          path: "./dist"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
